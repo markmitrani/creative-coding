@@ -38,7 +38,7 @@ const sketch = () => {
   return ({ context, width, height }) => {
     // n = 22, r = 1000000
     
-    n = 23
+    n = 37
     r = 4000000
     
     // Off-white background
@@ -61,7 +61,7 @@ const sketch = () => {
     
     // draw circle in the center
     context.beginPath();
-    context.arc(0, 0, 25, 0, 2 * Math.PI);
+    //context.arc(0, 0, 25, 0, 2 * Math.PI);
     context.stroke();
 
     // make array containing circle points
@@ -75,7 +75,7 @@ const sketch = () => {
         //console.log(current)
 
         context.beginPath();
-        context.arc(current.x, current.y, 10, 0, 2 * Math.PI);
+        //context.arc(current.x, current.y, 10, 0, 2 * Math.PI);
         context.stroke();
     }
 

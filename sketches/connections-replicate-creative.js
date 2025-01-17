@@ -36,9 +36,9 @@ const rootsOfUnity= (n, r) => {
 
 const sketch = () => {
   return ({ context, width, height }) => {
-    // n = 22, r = 1000000
+    // n = 22, r = 4000000
     
-    n = 43
+    n = 47
     r = 4000000
     
     // Off-white background
@@ -89,17 +89,18 @@ const sketch = () => {
         
         context.beginPath();
         // define starting point
-        context.moveTo(current.x, current.y);
+        // context.moveTo(current.x, current.y);
 
-        context.lineTo(next.x, next.y);
+        // context.lineTo(next.x, next.y);
         context.stroke();
     }
 
-    // connect points to others sequentially
+    o = 15
+    // link each point to every other point
     for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n; j++) {
+        for (let j = 0; j < n - 2*o; j++) {
             current = circlePoints[i]
-            next = circlePoints[(i+5+j)%n]
+            next = circlePoints[(i+o+j)%n]
 
             // debugging: log beginning and end
             //console.log(current)

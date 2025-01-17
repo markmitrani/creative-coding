@@ -1,0 +1,15 @@
+{
+  "name": "creative-coding",
+  "version": "1.0.0",
+  "description": "This project makes use of the canvas-sketch library for creative visualization.\r The following command installs canvas-sketch globally:\r ```\r npm install canvas-sketch-cli -g\r ```",
+  "main": "fundamentals.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas-sketch": "^0.7.7"
+  }
+}

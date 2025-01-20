@@ -38,11 +38,11 @@ const sketch = () => {
   return ({ context, width, height }) => {
     // n = 22, r = 4000000
     
-    n = 47
+    n = 51
     r = 4000000
     
     // Off-white background
-    context.fillStyle = 'hsl(0, 0%, 98%)';
+    context.fillStyle = 'black';
     context.fillRect(0, 0, width, height);
 
     context.save();
@@ -55,7 +55,7 @@ const sketch = () => {
     //console.log(rootsOfUnity(6, 1))
     center = new Point(width/2, height/2)
 
-    context.strokeStyle = 'black';
+    context.strokeStyle = 'hsl(0, 0%, 98%)';
     context.lineWidth = width * 0.001;
     
     // draw circle in the center
@@ -95,7 +95,7 @@ const sketch = () => {
         context.stroke();
     }
 
-    o = 15
+    o = 22
     // link each point to every other point
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n - 2*o; j++) {

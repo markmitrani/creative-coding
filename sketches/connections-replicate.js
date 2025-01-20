@@ -14,7 +14,7 @@ Used to calculate the roots of unity given n and r (radius).
 Results are stored as x and y coordinates of Point.
 (n, r) => Array[Point()]
 */
-const rootsOfUnity= (n, r) => {
+const rootsOfUnity = (n, r) => {
     // Initialize points array
     let points = new Array(n)
 
@@ -36,7 +36,7 @@ const rootsOfUnity= (n, r) => {
 
 const sketch = () => {
   return ({ context, width, height }) => {
-    // n = 22, r = 1000000
+    // n = 37, r = 4000000
     
     n = 37
     r = 4000000
@@ -61,7 +61,7 @@ const sketch = () => {
     
     // draw circle in the center
     context.beginPath();
-    //context.arc(0, 0, 25, 0, 2 * Math.PI);
+    context.arc(0, 0, 25, 0, 2 * Math.PI);
     context.stroke();
 
     // make array containing circle points
@@ -74,9 +74,11 @@ const sketch = () => {
         // debugging: log current point
         //console.log(current)
 
+        context.lineWidth = width * 0.01;
         context.beginPath();
-        //context.arc(current.x, current.y, 10, 0, 2 * Math.PI);
+        // context.arc(current.x, current.y, 10, 0, 2 * Math.PI);
         context.stroke();
+        context.lineWidth = width * 0.001;
     }
 
     // link points to others sequentially
@@ -96,7 +98,7 @@ const sketch = () => {
         context.stroke();
     }
     
-    o = 2
+    o = 0 // offset (how many adjacent points to skip before linking)
     // link each point to every other point
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n - 2*o; j++) {
@@ -105,13 +107,13 @@ const sketch = () => {
 
             // debugging: log beginning and end
             //console.log(current)
-            //onsole.log(next)
+            //console.log(next)
 
             context.beginPath();
             // define start and end points
             context.moveTo(current.x, current.y);
             context.lineTo(next.x, next.y);
-
+            
             context.stroke();
         }
     }
